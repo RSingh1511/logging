@@ -85,5 +85,11 @@ coverage --test_env=COVERAGE_GCOV_OPTIONS=-bcu
 # These compile time options are required to cover abnormal termination cases. In GCC one can use `__gcc_dump()`, but this does not work with LLVM
 # LLVM provided these compile-time options in combination with a specific profile setting which is enabled in bazel via `LLVM_PROFILE_CONTINUOUS_MODE`
 coverage --test_env=LLVM_PROFILE_CONTINUOUS_MODE=1
-coverage --cxxopt -mllvm
-coverage --cxxopt -runtime-counter-relocation
+# Note: The following flags are LLVM/Clang specific and don't work with GCC
+# coverage --cxxopt -mllvm
+# coverage --cxxopt -runtime-counter-relocation
+
+# Coverage configuration for C++
+coverage --features=coverage
+coverage --combined_report=lcov
+coverage --cache_test_results=no

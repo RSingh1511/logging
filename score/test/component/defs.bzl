@@ -66,10 +66,10 @@ def py_logging_itf_test(name, srcs, filesystem, **kwargs):
             "FILESYSTEM": "$(location {})".format(filesystem),
             "DATAROUTER": "$(location //score/datarouter:datarouter)",
         },
-        target_compatible_with = select({
-            "@platforms//cpu:x86_64": ["@platforms//cpu:x86_64"],
-            "@platforms//cpu:arm64": ["@platforms//cpu:arm64"],
-        }) + ["@platforms//os:qnx"],
+        target_compatible_with = [
+            "@platforms//cpu:x86_64",
+            "@platforms//os:qnx",
+        ],
     )
 
     _extend_list_in_kwargs(kwargs, "data", select({

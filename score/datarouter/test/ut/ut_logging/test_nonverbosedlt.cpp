@@ -32,7 +32,7 @@ struct TestTraceableStruct
     std::uint32_t i;
     std::uint32_t j;
 };
-STRUCT_TRACEABLE(TestTraceableStruct, i, j)
+SPP_STRUCT_TRACEABLE(TestTraceableStruct, i, j)
 
 }  // namespace test
 }  // namespace datarouter

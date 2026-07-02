@@ -31,7 +31,6 @@ cc_library(
         "//platform/aas/pas/crash_handler:__pkg__",
         "//platform/aas/test/pas:__subpackages__",
         "//score/datarouter/test:__subpackages__",
-        "//score/test/component:__subpackages__",
         "@score_baselibs//score/logging:__pkg__",
     ],
     deps = [

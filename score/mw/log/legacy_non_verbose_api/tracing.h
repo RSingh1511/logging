@@ -473,10 +473,10 @@ inline void TraceWarn(const T& arg)
 
 /// \public
 /// \thread-safe
-// Using preprocessor here because we define function macro to use it any where with name STRUCT_TRACEABLE
+// Using preprocessor here because we define function macro to use it any where with name SPP_STRUCT_TRACEABLE
 // coverity[autosar_cpp14_a16_0_1_violation]
-#ifndef STRUCT_TRACEABLE
-#define STRUCT_TRACEABLE(...) STRUCT_VISITABLE(__VA_ARGS__)
+#ifndef SPP_STRUCT_TRACEABLE
+#define SPP_STRUCT_TRACEABLE(...) SPP_STRUCT_VISITABLE(__VA_ARGS__)
 #endif
 
 #endif  // SCORE_MW_LOG_LEGACY_NON_VERBOSE_API_TRACING_H
